@@ -80,7 +80,18 @@ export const ProductInfo = (props: ProductInfoProps) => {
     };
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mx-auto max-md:px-2 ">
+        <div className="grid relative grid-cols-1 lg:grid-cols-2 gap-16 mx-auto max-md:px-2 ">
+            <div className={'absolute left-0 top-0'}>
+                <Icon
+                    onClick={() => {
+                        router.push('/shop');
+                    }}
+                    color={'#f97316'}
+                    className={'border p-2 cursor-pointer border-gray-600 rounded-full'}
+                    size={40}
+                    name={'ArrowLeft'}
+                />
+            </div>
             <div className="img">
                 <div className="img-box h-full max-lg:mx-auto ">
                     <img
@@ -96,10 +107,7 @@ export const ProductInfo = (props: ProductInfoProps) => {
                     <div className="flex flex-col sm:flex-row sm:items-center mb-6">
                         <h6 className="font-manrope font-semibold text-2xl leading-9 text-orange-600 pr-5 mr-5">${product.price}</h6>
                     </div>
-                    <p className="text-gray-500 text-base font-normal mb-5">
-                        Introducing our vibrant Basic Yellow Tropical Printed Shirt - a celebration of style and sunshine! Embrace the essence of summer
-                        wherever you go with this eye-catching piece that effortlessly blends comfort and tropical flair.{' '}
-                    </p>
+                    <p className="text-gray-500 text-base font-normal mb-5">{product.description}</p>
                     <div className="grid grid-cols-1  gap-3 py-8">
                         {productInCart ? (
                             <>
