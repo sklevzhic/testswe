@@ -76,11 +76,13 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                         </div>
                         <div className="text-end bg-inherit md:order-4 md:w-32">
                             <p className="text-base bg-inherit font-bold text-white dark:text-white">
-                                <span className={'text-gray-400 mr-1'}>1 x</span> ${product.price}
+                                <span className={'text-gray-400 mr-1'}>1: </span> ${product.price}
                             </p>
-                            <p className="text-base bg-inherit font-bold text-white dark:text-white">
-                                <span className={'text-gray-400 mr-1'}>{quantity} x</span>${Number(Number(product.price) * quantity).toFixed(2)}
-                            </p>
+                            {quantity > 1 && (
+                                <p className="text-base bg-inherit font-bold text-white dark:text-white">
+                                    <span className={'text-gray-400 mr-1'}>{quantity}: </span>${Number(Number(product.price) * quantity).toFixed(2)}
+                                </p>
+                            )}
                         </div>
                     </div>
                     <div className="w-full min-w-0 flex-1 bg-inherit space-y-4 md:order-2 md:max-w-md">

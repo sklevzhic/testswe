@@ -4,13 +4,27 @@ import React from 'react';
 
 import { CartList } from '@/widgets/cart/list';
 import { CartSummary } from '@/widgets/cart/summary';
+import Icon from '@/shared/ui/icon';
+import { useRouter } from 'next/navigation';
 
 export default function ContactsPage() {
+    const router = useRouter();
     return (
         <>
-            <section className="py-8 antialiased md:py-16">
-                <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
-                    <h2 className="text-xl font-semibold text-white dark:text-white sm:text-2xl">Shopping Cart</h2>
+            <section className="antialiased  min-h-[60dvh] relative mx-auto max-w-7xl  px-4 lg:px-6">
+                <div>
+                    <h2 className="flex text-xl font-semibold text-white dark:text-white sm:text-2xl">
+                        <Icon
+                            onClick={() => {
+                                router.back();
+                            }}
+                            color={'#f97316'}
+                            className={'border p-2 cursor-pointer border-gray-600 rounded-full mr-3'}
+                            size={35}
+                            name={'ArrowLeft'}
+                        />
+                        <span>Shopping Cart</span>
+                    </h2>
                     <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
                         <CartList />
                         <CartSummary />
