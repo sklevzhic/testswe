@@ -14,16 +14,17 @@ export const ProductCardMini = (props: ProductCardMiniProps) => {
     const { onClick, image, title, price, onClickAddToCart, isAddedToCart } = props;
     return (
         <>
-            <div onClick={onClick} className="relative w-full cursor-pointer max-w-xs overflow-hidden rounded-lg bg-gray-800 shadow-md">
-                <img className="h-60 rounded-t-lg object-contain" src={image} alt="product image" />
-
-                <div className="mt-4 px-5 pb-5 bg-gray-900 pt-2">
-                    <h5 className="text-lg font-semibold tracking-tight text-slate-100 mb-2 truncate ">{title}</h5>
-
-                    <div className="flex items-center justify-between">
-                        <p className={''}>
-                            <span className="text-xl font-bold text-orange-500">${price}</span>
-                        </p>
+            <div onClick={onClick} className="rounded-lg border p-6 shadow-sm border-gray-900 bg-gray-800">
+                <div className="h-56 w-full">
+                    <a href="#">
+                        <img className="mx-auto h-full hidden" src={image} alt="" />
+                        <img className="mx-auto h-full block" src={image} alt="" />
+                    </a>
+                </div>
+                <div className="pt-6">
+                    <a className="text-lg font-semibold leading-tight hover:underline text-white truncate">{title}</a>
+                    <div className="mt-4 flex items-center justify-between gap-4">
+                        <p className="text-2xl font-extrabold leading-tight  text-orange-600">${price}</p>
                         <CartCountHandler size={30} onClick={onClickAddToCart} isAddedToCart={isAddedToCart} />
                     </div>
                 </div>

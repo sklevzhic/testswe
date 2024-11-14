@@ -14,13 +14,18 @@ export const Header = () => {
 
     return (
         <>
-            <div>
-                <header>
-                    <nav className="p-5">
-                        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                            <a href="/" className="flex items-center">
-                                <span className="self-center text-xl ml-2 text-white font-semibold whitespace-nowrap">
-                                    <span className={'text-orange-500'}>CS</span>SKINS
+            <div className={'fixed w-full z-10 bg-[#202026]'}>
+                <header className={'w-full max-w-7xl mx-auto'}>
+                    <nav className="py-5 px-4 lg:px-6">
+                        <div className="flex flex-wrap justify-between items-center">
+                            <a
+                                onClick={() => {
+                                    router.push('/');
+                                }}
+                                className="flex items-center cursor-pointer"
+                            >
+                                <span className="self-center text-xl text-white font-semibold whitespace-nowrap">
+                                    <span className={'text-orange-600'}>CS</span>SKINS
                                 </span>
                             </a>
                             <div className="flex items-center md:order-2">
@@ -76,7 +81,7 @@ export const Header = () => {
                                             }}
                                             className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
-                                                ${pathname === '/' ? 'text-orange-500' : 'text-white'}`}
+                                                ${pathname === '/' ? 'text-orange-600' : 'text-white'}`}
                                         >
                                             Home
                                         </a>
@@ -88,7 +93,7 @@ export const Header = () => {
                                             }}
                                             className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
-                                                ${pathname === '/shop' ? 'text-orange-500' : 'text-white'}`}
+                                                ${pathname === '/shop' ? 'text-orange-600' : 'text-white'}`}
                                         >
                                             Shop
                                         </a>
@@ -100,7 +105,7 @@ export const Header = () => {
                                             }}
                                             className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
-                                                ${pathname === '/about-us' ? 'text-orange-500' : 'text-white'}`}
+                                                ${pathname === '/about-us' ? 'text-orange-600' : 'text-white'}`}
                                         >
                                             About us
                                         </a>
@@ -113,7 +118,7 @@ export const Header = () => {
                                             }}
                                             className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
-                                                ${pathname === '/contacts' ? 'text-orange-500' : 'text-white'}`}
+                                                ${pathname === '/contacts' ? 'text-orange-600' : 'text-white'}`}
                                         >
                                             Contacts
                                         </a>

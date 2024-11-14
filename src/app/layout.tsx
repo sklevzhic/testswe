@@ -17,13 +17,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     return (
         <html lang="en">
             <body>
-                <div className="min-h-screen">
-                    <ToastProvider>
-                        <Header />
+                <ToastProvider>
+                    <Header />
+                    <div className={'pt-24 w-full mx-auto'}>
                         {children}
                         <Footer />
-                    </ToastProvider>
-                </div>
+                    </div>
+                </ToastProvider>
                 <ModalProvider />
             </body>
         </html>
