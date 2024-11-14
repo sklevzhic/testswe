@@ -52,7 +52,7 @@ export const Footer = () => {
                             <img src="/images/payments/mastercard-logo.8c70c99.png" alt="" />
                         </div>
                         <span className="text-lg text-gray-500 text-center block">
-                            ©<a href="https://pagedone.io/">pagedone</a> 2024, All rights reserved.
+                            © 2024, All rights reserved.
                         </span>
                     </div>
                 </div>
