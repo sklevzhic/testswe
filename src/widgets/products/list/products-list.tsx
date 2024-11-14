@@ -118,7 +118,7 @@ export const ProductInfo = (props: ProductInfoProps) => {
                                         onClick={() => {
                                             if (quantity > 0) {
                                                 changeQuantityById(product.id, 'decrease');
-                                                setQuantity((prev) => prev - 1);
+                                                setQuantity((prev) => prev - 1 || 1);
                                             }
                                         }}
                                     />

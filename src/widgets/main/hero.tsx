@@ -38,7 +38,7 @@ export const Hero = () => {
                             </div>
                             <div className="w-full xl:col-span-7  lg:col-span-6 block">
                                 <div className="w-full  sm:w-auto lg:w-[60.8125rem] xl:ml-16">
-                                    <img src="/images/image.jpg" alt="Dashboard image" className="rounded-l-3xl object-cover" />
+                                    <img src="/images/image.jpg" alt="Dashboard image" className="rounded-3xl object-cover" />
                                 </div>
                             </div>
                         </div>

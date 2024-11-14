@@ -29,7 +29,7 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
 
     return (
         <>
-            <div key={product.id} className="rounded-lg border border-gray-800 bg-gray-700 p-4 shadow-sm dark:bg-gray-800 md:p-6">
+            <div key={product.id} className="rounded-lg border border-gray-800 bg-gray-800 p-4 shadow-sm dark:bg-gray-800 md:p-6">
                 <div className="space-y-4 bg-inherit md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                     <a className="shrink-0 bg-inherit md:order-1">
                         <img className="h-20 w-20 bg-inherit dark:hidden" src={'/images/items/' + product.image} alt="imac image" />
@@ -50,7 +50,17 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                                     }
                                 }}
                             />
-
+                            <input
+                                type="text"
+                                id="counter-input-2"
+                                data-input-counter=""
+                                className="w-10 rounded-full border shrink-0 ml-1 mr-1 bg-transparent text-center text-sm font-medium text-white focus:outline-none focus:ring-0"
+                                placeholder=""
+                                disabled={true}
+                                required={true}
+                                value={quantity}
+                                onChange={() => {}}
+                            />
                             <Icon
                                 name={'Plus'}
                                 className={'bg-gray-300 hover:bg-gray-400 rounded-full cursor-pointer'}
