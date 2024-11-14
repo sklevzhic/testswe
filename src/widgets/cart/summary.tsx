@@ -16,7 +16,7 @@ export const CartSummary = () => {
                         <div className="space-y-2">
                             <dl className="flex items-center justify-between gap-4">
                                 <dt className="text-base font-normal text-gray-500 dark:text-gray-400">Original price</dt>
-                                <dd className="text-base font-medium text-white">${total.value}</dd>
+                                <dd className="text-base font-medium text-white">${Number(total.value).toFixed(2)}</dd>
                             </dl>
                             <dl className="flex items-center justify-between gap-4">
                                 <dt className="text-base font-normal text-gray-500 dark:text-gray-400">Savings</dt>
@@ -33,7 +33,7 @@ export const CartSummary = () => {
                         </div>
                         <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
                             <dt className="text-base font-bold text-white">Total</dt>
-                            <dd className="text-base font-bold text-white">${total.value}</dd>
+                            <dd className="text-base font-bold text-white">${Number(total.value).toFixed(2)}</dd>
                         </dl>
 
                         <Button

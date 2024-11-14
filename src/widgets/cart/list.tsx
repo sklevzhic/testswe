@@ -11,9 +11,13 @@ export const CartList = () => {
         <>
             <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
                 <div className="space-y-6">
-                    {productsCart.map((product) => {
-                        return <CartItem key={product.id} product={product} />;
-                    })}
+                    {productsCart.length ? (
+                        productsCart.map((product) => {
+                            return <CartItem key={product.id} product={product} />;
+                        })
+                    ) : (
+                        <div className={'flex justify-center py-20 rounded-xl border p-2 text-lg text-white border-slate-400'}>Empty</div>
+                    )}
                 </div>
             </div>
         </>
@@ -71,7 +75,12 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                             />
                         </div>
                         <div className="text-end bg-inherit md:order-4 md:w-32">
-                            <p className="text-base bg-inherit font-bold text-white dark:text-white">${product.price}</p>
+                            <p className="text-base bg-inherit font-bold text-white dark:text-white">
+                                <span className={'text-gray-400 mr-1'}>1 x</span> ${product.price}
+                            </p>
+                            <p className="text-base bg-inherit font-bold text-white dark:text-white">
+                                <span className={'text-gray-400 mr-1'}>{quantity} x</span>${Number(Number(product.price) * quantity).toFixed(2)}
+                            </p>
                         </div>
                     </div>
                     <div className="w-full min-w-0 flex-1 bg-inherit space-y-4 md:order-2 md:max-w-md">
