@@ -6,12 +6,13 @@ html,
 body,
 :root {
     height: 100%;
+    background: #202026;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #121217;
 }
 
 
@@ -78,6 +79,7 @@ body,
         --ring: 24 5.7% 82.9%;
     }
 }
+
 
 @layer base {
     * {

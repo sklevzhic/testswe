@@ -25,7 +25,7 @@ export const ProductsList = () => {
                     {product ? (
                         <ProductInfo product={product} />
                     ) : (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
+                        <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 xl:grid-cols-4 gap-8">
                             {products.map((item) => {
                                 const productInCart = productsCart.find((productCart) => productCart.id === item.id);
 
@@ -73,7 +73,7 @@ export const ProductInfo = (props: ProductInfoProps) => {
     const productInCart = productsCart.find((productCart) => productCart.id === product.id);
     const router = useRouter();
 
-    const [quantity, setQuantity] = useState(productInCart?.quantity || 0);
+    const [quantity, setQuantity] = useState(productInCart?.quantity || 1);
 
     const getProductFromCart = (id: string) => {
         return productsCart.find((product) => product.id === id);
@@ -94,9 +94,7 @@ export const ProductInfo = (props: ProductInfoProps) => {
                 <div className="data w-full max-w-xl">
                     <h2 className="font-manrope font-bold text-white text-3xl leading-10 mb-2 capitalize">{product.title}</h2>
                     <div className="flex flex-col sm:flex-row sm:items-center mb-6">
-                        <h6 className="font-manrope font-semibold text-2xl leading-9 text-indigo-600 pr-5 sm:border-r border-gray-200 mr-5">
-                            ${product.price}
-                        </h6>
+                        <h6 className="font-manrope font-semibold text-2xl leading-9 text-orange-600 pr-5 mr-5">${product.price}</h6>
                     </div>
                     <p className="text-gray-500 text-base font-normal mb-5">
                         Introducing our vibrant Basic Yellow Tropical Printed Shirt - a celebration of style and sunshine! Embrace the essence of summer
@@ -116,16 +114,16 @@ export const ProductInfo = (props: ProductInfoProps) => {
                                             }
                                         }}
                                     />
-
                                     <input
                                         type="text"
                                         id="counter-input-2"
                                         data-input-counter=""
                                         className="w-10 rounded-full border shrink-0 ml-1 mr-1 bg-transparent text-center text-sm font-medium text-white focus:outline-none focus:ring-0"
                                         placeholder=""
-                                        defaultValue={quantity}
+                                        disabled={true}
                                         required={true}
                                         value={quantity}
+                                        onChange={() => {}}
                                     />
                                     <Icon
                                         name={'Plus'}

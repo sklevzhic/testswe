@@ -19,7 +19,7 @@ export const AboutUsMain = () => {
                                     {/*    About Us*/}
                                     {/*</h6>*/}
                                     <div className="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
-                                        <h2 className="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+                                        <h2 className="text-orange-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
                                             Level up your gaming experience
                                         </h2>
                                         <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
@@ -79,7 +79,7 @@ export const AboutUsMain = () => {
                         </div>
 
                         <div className="w-full lg:justify-start justify-center items-start flex">
-                            <div className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-indigo-600 rounded-3xl sm:border border-gray-200 relative">
+                            <div className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-orange-600 rounded-3xl sm:border border-gray-200 relative">
                                 <img className="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover" src="/images/image.jpg" alt="Counter-Strike items" />
                             </div>
                         </div>

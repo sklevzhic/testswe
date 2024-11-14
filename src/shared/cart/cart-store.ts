@@ -110,15 +110,21 @@ export const useCart = create<ContextType>(
                     operation = -1;
                 }
 
-                const updatedProducts = get().products.map((p) => {
-                    if (p.id === productId) {
-                        return {
-                            ...p,
-                            quantity: p.quantity + operation,
-                        };
-                    }
-                    return p;
-                });
+                const updatedProducts = get()
+                    .products.map((p) => {
+                        if (p.id === productId) {
+                            const newQuantity = p.quantity + operation;
+                            if (newQuantity === 0) {
+                                return null; // Удаляем продукт, если количество становится 0
+                            }
+                            return {
+                                ...p,
+                                quantity: newQuantity,
+                            };
+                        }
+                        return p;
+                    })
+                    .filter((p) => p !== null); // Фильтруем null значения
 
                 set(() => ({
                     products: updatedProducts,

@@ -8,7 +8,7 @@ export const UserCardMini = ({ name, email }: UserCardMiniProps) => {
     return (
         <div className={'flex items-center w-full overflow-hidden'}>
             <Avatar className={'mr-1'}>
-                <AvatarFallback className={'bg-indigo-600 text-white'}>AA</AvatarFallback>
+                <AvatarFallback className={'bg-orange-600 text-white'}>AA</AvatarFallback>
             </Avatar>
             <div className={'flex flex-col'}>
                 <p className={'text-left text-sm leading-6 font-semibold text-gray-900 capitalize'}>{name}</p>

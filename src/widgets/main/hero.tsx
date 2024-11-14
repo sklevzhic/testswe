@@ -15,17 +15,17 @@ export const Hero = () => {
                         <div className="grid grid-cols-1 gap-14 items-center lg:grid-cols-12 lg:gap32">
                             <div className="w-full xl:col-span-5 lg:col-span-6 2xl:-mx-5 xl:-mx-0">
                                 <div className="flex items-center text-sm font-medium text-white justify-center lg:justify-start">
-                                    <span className="bg-indigo-600 py-1 px-3 rounded-2xl text-xs font-medium text-white mr-3 ">#1</span>
+                                    <span className="bg-orange-600 py-1 px-3 rounded-2xl text-xs font-medium text-white mr-3 ">#1</span>
                                     Counter-Strike
                                 </div>
                                 <h1 className="py-8 text-center text-white font-bold font-manrope text-4xl lg:text-left leading-[70px]">
-                                    Master the Battlefield with<span className="text-indigo-600"> Counter-Strike </span>Arsenal
+                                    Master the Battlefield with<span className="text-orange-600"> Counter-Strike </span>Arsenal
                                 </h1>
                                 <p className=" text-gray-500 text-lg text-center lg:text-left">
                                     Enhance your gaming skills with a wide range of Counter-Strike weapons and gear. Outsmart your opponents and claim victory.
                                     Shop now to upgrade your arsenal.
                                 </p>
-                                <div className={'flex justify-start mt-3'}>
+                                <div className={'flex  mt-3 justify-center lg:justify-start'}>
                                     <Button
                                         variant={'primary'}
                                         onClick={() => {

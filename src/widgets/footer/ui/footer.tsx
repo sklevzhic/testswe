@@ -1,9 +1,10 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export const Footer = () => {
+    const router = useRouter();
     return (
         <>
             <footer className="w-full py-14">
@@ -11,24 +12,39 @@ export const Footer = () => {
                     <div className="max-w-3xl mx-auto">
                         <div className={'flex justify-center'}>
                             <span className="self-center text-center text-xl ml-2 text-white font-semibold whitespace-nowrap">
-                                <span className={'text-indigo-600'}>CS</span>SKINS
+                                <span className={'text-orange-600'}>CS</span>SKINS
                             </span>
                         </div>
                         <ul className="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200">
                             <li>
-                                <Link href={'/'} className=" text-white hover:text-indigo-600">
+                                <a
+                                    onClick={() => {
+                                        router.push('/shop');
+                                    }}
+                                    className="cursor-pointer text-white hover:text-orange-600"
+                                >
                                     Shop
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link href={'/about-us'} className="text-white hover:text-indigo-600">
+                                <a
+                                    onClick={() => {
+                                        router.push('/about-us');
+                                    }}
+                                    className="cursor-pointer text-white hover:text-orange-600"
+                                >
                                     About us
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link href={'/contacts'} className=" text-white hover:text-indigo-600">
+                                <a
+                                    onClick={() => {
+                                        router.push('/contacts');
+                                    }}
+                                    className="cursor-pointer text-white hover:text-orange-600"
+                                >
                                     Contacts
-                                </Link>
+                                </a>
                             </li>
                         </ul>
                         <div className="flex space-x-10 justify-center items-center mb-14">

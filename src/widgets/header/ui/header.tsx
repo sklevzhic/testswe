@@ -3,13 +3,14 @@
 import React, { useState } from 'react';
 import { CartCountHandler } from '@/shared/ui';
 import classNames from 'classnames';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useCart } from '@/shared/cart/cart-store';
 
 export const Header = () => {
     const router = useRouter();
     const [isPopUpOpen, setIsPopUpOpen] = useState(false);
     const { total } = useCart();
+    const pathname = usePathname();
 
     return (
         <>
@@ -19,7 +20,7 @@ export const Header = () => {
                         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                             <a href="/" className="flex items-center">
                                 <span className="self-center text-xl ml-2 text-white font-semibold whitespace-nowrap">
-                                    <span className={'text-indigo-600'}>CS</span>SKINS
+                                    <span className={'text-orange-500'}>CS</span>SKINS
                                 </span>
                             </a>
                             <div className="flex items-center md:order-2">
@@ -32,7 +33,7 @@ export const Header = () => {
                                 <button
                                     data-collapse-toggle="mobile-menu-2"
                                     type="button"
-                                    className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                                    className="inline-flex ml-4 items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-inherit focus:outline-none focus:ring-2 focus:ring-gray-200"
                                     aria-controls="mobile-menu-2"
                                     aria-expanded="false"
                                     onClick={() => {
@@ -73,7 +74,9 @@ export const Header = () => {
                                             onClick={() => {
                                                 router.push('/');
                                             }}
-                                            className="block cursor-pointer py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0"
+                                            className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
+                                                hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
+                                                ${pathname === '/' ? 'text-orange-500' : 'text-white'}`}
                                         >
                                             Home
                                         </a>
@@ -83,7 +86,9 @@ export const Header = () => {
                                             onClick={() => {
                                                 router.push('/shop');
                                             }}
-                                            className="block cursor-pointer py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0"
+                                            className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
+                                                hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
+                                                ${pathname === '/shop' ? 'text-orange-500' : 'text-white'}`}
                                         >
                                             Shop
                                         </a>
@@ -93,7 +98,9 @@ export const Header = () => {
                                             onClick={() => {
                                                 router.push('/about-us');
                                             }}
-                                            className="block cursor-pointer py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0"
+                                            className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
+                                                hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
+                                                ${pathname === '/about-us' ? 'text-orange-500' : 'text-white'}`}
                                         >
                                             About us
                                         </a>
@@ -104,7 +111,9 @@ export const Header = () => {
                                             onClick={() => {
                                                 router.push('/contacts');
                                             }}
-                                            className="block cursor-pointer py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0"
+                                            className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
+                                                hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
+                                                ${pathname === '/contacts' ? 'text-orange-500' : 'text-white'}`}
                                         >
                                             Contacts
                                         </a>

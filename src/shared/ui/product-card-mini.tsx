@@ -14,7 +14,7 @@ export const ProductCardMini = (props: ProductCardMiniProps) => {
     const { onClick, image, title, price, onClickAddToCart, isAddedToCart } = props;
     return (
         <>
-            <div onClick={onClick} className="relative m-10 w-full max-w-xs overflow-hidden rounded-lg bg-gray-900 shadow-md">
+            <div onClick={onClick} className="relative w-full max-w-xs overflow-hidden rounded-lg bg-gray-900 shadow-md">
                 <img className="h-60 rounded-t-lg object-contain bg-gray-900" src={image} alt="product image" />
 
                 <div className="mt-4 px-5 pb-5 bg-gray-800">
