@@ -10,20 +10,20 @@ export const Footer = () => {
             <footer className="w-full max-w-7xl mx-auto pt-20 px-4 lg:px-6 font-[sans-serif] tracking-wide">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
                     <div className="lg:flex flex-col">
-                        <div className={ 'mb-8' }>
+                        <div className={'mb-8'}>
                             <a
-                                onClick={ () => {
+                                onClick={() => {
                                     router.push('/');
-                                } }
+                                }}
                                 className="flex items-center cursor-pointer"
                             >
-                                <img width={ 120 } height={ 30 } src={ "/images/logo.png" }/>
+                                <img width={120} height={30} src={'/images/logo.png'} />
                             </a>
                         </div>
 
                         <div className="flex justify-start space-x-5 items-center mt-[-12px] md:hidden">
-                            <img className={ 'w-12 h-5' } src="/images/payments/visa.png" alt=""/>
-                            <img className={ 'w-12 h-6 mt-[-6px]' } src="/images/payments/mc.png" alt=""/>
+                            <img className={'w-12 h-5'} src="/images/payments/visa.png" alt="" />
+                            <img className={'w-12 h-6 mt-[-6px]'} src="/images/payments/mc.png" alt="" />
                         </div>
                     </div>
 

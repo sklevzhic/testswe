@@ -26,24 +26,24 @@ export const Header = () => {
                             <a
                                 onClick={() => {
                                     router.push('/');
-                                    setIsPopUpOpen(false)
+                                    setIsPopUpOpen(false);
                                 }}
                                 className="flex items-center cursor-pointer"
                             >
-                                <img width={80} height={20} src={"/images/logo.png"} />
+                                <img width={80} height={20} src={'/images/logo.png'} />
                             </a>
                             <div className="flex items-center md:order-2">
                                 <CartCountHandler
                                     count={total.items}
                                     onClick={() => {
                                         router.push('/cart');
-                                        setIsPopUpOpen(false)
+                                        setIsPopUpOpen(false);
                                     }}
                                 />
                                 <button
                                     type="button"
                                     className="inline-flex ml-4 items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-inherit focus:outline-none focus:ring-2 focus:ring-gray-200"
-                                    onClick={(event) => {
+                                    onClick={() => {
                                         if (isPopUpOpen) {
                                             setIsPopUpOpen(false);
                                         } else {

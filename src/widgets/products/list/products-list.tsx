@@ -112,16 +112,17 @@ export const ProductInfo = (props: ProductInfoProps) => {
                         {productInCart ? (
                             <>
                                 <div className="flex mb-2 bg-inherit justify-center">
-                                    <Icon
-                                        name={'Minus'}
-                                        className={'bg-gray-300 hover:bg-gray-400 rounded-full cursor-pointer'}
+                                    <Button
+                                        variant={'primary'}
+                                        disabled={quantity <= 0}
+                                        className={'bg-orange-400 !p-1 w-6 h-6 hover:bg-orange-500 !rounded-full cursor-pointer'}
                                         onClick={() => {
-                                            if (quantity > 0) {
-                                                changeQuantityById(product.id, 'decrease');
-                                                setQuantity((prev) => prev - 1 || 1);
-                                            }
+                                            changeQuantityById(product.id, 'decrease');
+                                            setQuantity((prev) => prev - 1 || 1);
                                         }}
-                                    />
+                                    >
+                                        <Icon name={'Minus'} className={''} />
+                                    </Button>
                                     <input
                                         type="text"
                                         id="counter-input-2"
@@ -131,16 +132,19 @@ export const ProductInfo = (props: ProductInfoProps) => {
                                         disabled={true}
                                         required={true}
                                         value={quantity}
+                                        min={1}
                                         onChange={() => {}}
                                     />
-                                    <Icon
-                                        name={'Plus'}
-                                        className={'bg-gray-300 hover:bg-gray-400 rounded-full cursor-pointer'}
+                                    <Button
+                                        variant={'primary'}
+                                        className={'bg-orange-400 !p-1 w-6 h-6 hover:bg-orange-500 !rounded-full cursor-pointer'}
                                         onClick={() => {
                                             changeQuantityById(product.id, 'increase');
                                             setQuantity((prev) => prev + 1);
                                         }}
-                                    />
+                                    >
+                                        <Icon name={'Plus'} className={''} />
+                                    </Button>
                                 </div>
                             </>
                         ) : (

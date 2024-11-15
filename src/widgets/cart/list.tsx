@@ -4,6 +4,7 @@ import Icon from '@/shared/ui/icon';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { ProductWithQuantity, useCart } from '@/shared/cart/cart-store';
+import { Button } from '@/shared/ui';
 
 export const CartList = () => {
     const { products: productsCart } = useCart();
@@ -44,16 +45,17 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                     </label>
                     <div className="flex items-center bg-inherit justify-between md:order-3 md:justify-end">
                         <div className="flex items-center">
-                            <Icon
-                                name={'Minus'}
-                                className={'bg-orange-400 hover:bg-orange-500 rounded-full cursor-pointer'}
+                            <Button
+                                variant={'primary'}
+                                disabled={quantity <= 1}
+                                className={'bg-orange-400 !p-1 w-6 h-6 hover:bg-orange-500 !rounded-full cursor-pointer'}
                                 onClick={() => {
-                                    if (quantity > 1) {
-                                        changeQuantityById(product.id, 'decrease');
-                                        setQuantity((prev) => prev - 1);
-                                    }
+                                    changeQuantityById(product.id, 'decrease');
+                                    setQuantity((prev) => prev - 1);
                                 }}
-                            />
+                            >
+                                <Icon name={'Minus'} className={''} />
+                            </Button>
                             <input
                                 type="text"
                                 id="counter-input-2"
@@ -66,14 +68,16 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                                 min={1}
                                 onChange={() => {}}
                             />
-                            <Icon
-                                name={'Plus'}
-                                className={'bg-orange-400 hover:bg-orange-500 rounded-full cursor-pointer'}
+                            <Button
+                                variant={'primary'}
+                                className={'bg-orange-400 !p-1 w-6 h-6 hover:bg-orange-500 !rounded-full cursor-pointer'}
                                 onClick={() => {
                                     changeQuantityById(product.id, 'increase');
                                     setQuantity((prev) => prev + 1);
                                 }}
-                            />
+                            >
+                                <Icon name={'Plus'} className={''} />
+                            </Button>
                         </div>
                         <div className="text-end bg-inherit md:order-4 md:w-32">
                             <p className="text-base bg-inherit font-bold text-white dark:text-white">
