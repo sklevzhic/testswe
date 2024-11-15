@@ -43,12 +43,12 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                         Choose quantity:
                     </label>
                     <div className="flex items-center bg-inherit justify-between md:order-3 md:justify-end">
-                        <div className="flex bg-inherit items-center">
+                        <div className="flex items-center">
                             <Icon
                                 name={'Minus'}
-                                className={'bg-gray-300 hover:bg-gray-400 rounded-full cursor-pointer'}
+                                className={'bg-orange-400 hover:bg-orange-500 rounded-full cursor-pointer'}
                                 onClick={() => {
-                                    if (quantity > 0) {
+                                    if (quantity > 1) {
                                         changeQuantityById(product.id, 'decrease');
                                         setQuantity((prev) => prev - 1);
                                     }
@@ -63,11 +63,12 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                                 disabled={true}
                                 required={true}
                                 value={quantity}
+                                min={1}
                                 onChange={() => {}}
                             />
                             <Icon
                                 name={'Plus'}
-                                className={'bg-gray-300 hover:bg-gray-400 rounded-full cursor-pointer'}
+                                className={'bg-orange-400 hover:bg-orange-500 rounded-full cursor-pointer'}
                                 onClick={() => {
                                     changeQuantityById(product.id, 'increase');
                                     setQuantity((prev) => prev + 1);
