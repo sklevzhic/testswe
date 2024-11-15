@@ -1,18 +1,18 @@
 'use client';
 
-import React, { useState } from 'react';
 import { Button } from '@/shared/ui';
 import Icon from '@/shared/ui/icon';
 import classNames from 'classnames';
 import { useOutsideClick } from '@/shared/hooks/use-on-outside-ckick';
 import { createPortal } from 'react-dom';
+import { FC, useEffect, useState } from 'react';
 
 interface AvatarProps {
     src: string;
     alt: string;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ src, alt }) => <img src={src} alt={alt} className="w-10 h-11 object-cover" />;
+const Avatar: FC<AvatarProps> = ({ src, alt }) => <img src={src} alt={alt} className="w-10 h-11 object-cover" />;
 
 interface MessageProps {
     sender: string;
@@ -23,7 +23,7 @@ interface MessageProps {
     className?: string;
 }
 
-const Message: React.FC<MessageProps> = ({ text, time, align = 'left', isUser = false, className }) => (
+const Message: FC<MessageProps> = ({ text, time, align = 'left', isUser = false, className }) => (
     <div className={classNames(`grid ${align === 'right' ? 'text-right' : ''}`, className)}>
         <h5 className={`text-sm font-semibold leading-snug pb-1 ${isUser ? 'text-gray-900' : 'text-gray-900'}`}>{/*{sender}*/}</h5>
         <div className={`px-3.5 py-2 rounded ${isUser ? 'bg-orange-500 text-white' : 'bg-gray-100 text-gray-900'}`}>
@@ -35,7 +35,7 @@ const Message: React.FC<MessageProps> = ({ text, time, align = 'left', isUser = 
     </div>
 );
 
-const ChatInput: React.FC = () => (
+const ChatInput: FC = () => (
     <div className="w-full pl-3 pr-1 py-1 rounded-3xl border border-gray-200 items-center gap-2 inline-flex justify-between">
         <div className="flex items-center gap-2">
             <input className="grow shrink basis-0 text-black text-sm font-medium leading-4 focus:outline-none" placeholder="Type here..." />
@@ -54,7 +54,7 @@ interface ChatBubbleProps {
     align: 'left' | 'right';
 }
 
-const ChatBubble: React.FC<ChatBubbleProps> = ({ avatar, messages, align }) => (
+const ChatBubble: FC<ChatBubbleProps> = ({ avatar, messages, align }) => (
     <div className={`flex gap-2.5 ${align === 'right' ? 'justify-end' : ''}`}>
         {align === 'left' && <Avatar src={avatar.src} alt={avatar.alt} />}
         <div>
@@ -75,7 +75,7 @@ interface ChatProps {
     onClose?: () => void;
 }
 
-const Chat: React.FC<ChatProps> = ({ chats, onClose }) => {
+const Chat: FC<ChatProps> = ({ chats, onClose }) => {
     const chatRef = useOutsideClick<HTMLDivElement>(() => {
         onClose?.();
     });
@@ -141,6 +141,16 @@ const chats: Array<{
 
 export const ChatAssistant = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
+
     return createPortal(
         <div className={'fixed bottom-2 right-2 max-w-[calc(100%-1rem)] z-40'}>
             {isOpen ? (
