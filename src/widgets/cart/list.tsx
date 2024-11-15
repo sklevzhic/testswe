@@ -37,8 +37,7 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
             <div key={product.id} className="rounded-lg border border-gray-800 bg-gray-800 p-4 shadow-sm dark:bg-gray-800 md:p-6">
                 <div className="space-y-4 bg-inherit md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                     <a className="shrink-0 bg-inherit md:order-1">
-                        <img className="h-20 w-20 bg-inherit dark:hidden" src={'/images/items/' + product.image} alt="imac image" />
-                        <img className="hidden h-20 w-20 bg-inherit dark:block" src={'/images/items/' + product.image} alt="imac image" />
+                        <img className="h-24 w-24 bg-inherit" src={'/images/items/' + product.image} alt="imac image" />
                     </a>
                     <label htmlFor="counter-input" className="sr-only">
                         Choose quantity:
