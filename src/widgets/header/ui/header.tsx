@@ -13,14 +13,14 @@ export const Header = () => {
     const { total } = useCart();
     const pathname = usePathname();
 
-    const buttonRef = useOutsideClick<HTMLButtonElement>(() => {
+    const menuMobileRef = useOutsideClick<HTMLDivElement>(() => {
         setIsPopUpOpen(false);
     });
 
     return (
         <>
             <div className={'fixed w-full z-10 bg-[#202026]'}>
-                <header className={'w-full max-w-7xl mx-auto'}>
+                <header className={'w-full max-w-7xl mx-auto'} ref={menuMobileRef}>
                     <nav className="py-5 px-4 lg:px-6">
                         <div className="flex flex-wrap justify-between items-center">
                             <a
@@ -41,13 +41,9 @@ export const Header = () => {
                                     }}
                                 />
                                 <button
-                                    data-collapse-toggle="mobile-menu-2"
                                     type="button"
                                     className="inline-flex ml-4 items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-inherit focus:outline-none focus:ring-2 focus:ring-gray-200"
-                                    aria-controls="mobile-menu-2"
-                                    aria-expanded="false"
-                                    ref={buttonRef}
-                                    onClick={() => {
+                                    onClick={(event) => {
                                         if (isPopUpOpen) {
                                             setIsPopUpOpen(false);
                                         } else {
@@ -81,13 +77,14 @@ export const Header = () => {
                             </div>
                             <div
                                 className={classNames(!isPopUpOpen && 'hidden', 'justify-between items-center w-full md:flex md:w-auto md:order-1')}
-                                id="mobile-menu-2"
+                                ref={menuMobileRef}
                             >
                                 <ul className="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
                                     <li>
                                         <a
                                             onClick={() => {
                                                 router.push('/');
+                                                setIsPopUpOpen(false);
                                             }}
                                             className={`block cursor-pointer py-2 pr-4 pl-3
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
@@ -100,6 +97,7 @@ export const Header = () => {
                                         <a
                                             onClick={() => {
                                                 router.push('/shop');
+                                                setIsPopUpOpen(false);
                                             }}
                                             className={`block cursor-pointer py-2 pr-4 pl-3 
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
@@ -112,6 +110,7 @@ export const Header = () => {
                                         <a
                                             onClick={() => {
                                                 router.push('/about-us');
+                                                setIsPopUpOpen(false);
                                             }}
                                             className={`block cursor-pointer py-2 pr-4 pl-3 
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
@@ -125,6 +124,7 @@ export const Header = () => {
                                         <a
                                             onClick={() => {
                                                 router.push('/contacts');
+                                                setIsPopUpOpen(false);
                                             }}
                                             className={`block cursor-pointer py-2 pr-4 pl-3
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
