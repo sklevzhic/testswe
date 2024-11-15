@@ -29,9 +29,7 @@ export const Header = () => {
                                 }}
                                 className="flex items-center cursor-pointer"
                             >
-                                <span className="self-center text-xl text-white font-semibold whitespace-nowrap">
-                                    <span className={'text-orange-600'}>CS</span>SKINS
-                                </span>
+                                <img width={80} height={20} src={"/images/logo.png"} />
                             </a>
                             <div className="flex items-center md:order-2">
                                 <CartCountHandler
