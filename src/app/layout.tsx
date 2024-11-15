@@ -7,6 +7,7 @@ import React from 'react';
 import { Header } from '@/widgets/header/ui/header';
 import { Footer } from '@/widgets/footer/ui/footer';
 import { ToastProvider } from '@/app/providers/toast-provider';
+import { ChatAssistant } from '@/widgets/chat-assistant/chat-assistant';
 
 export const metadata: Metadata = {
     title: 'CS SKINS',
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                         {children}
                         <Footer />
                     </div>
+                    <ChatAssistant />
                 </ToastProvider>
                 <ModalProvider />
             </body>
