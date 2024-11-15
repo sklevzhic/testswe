@@ -26,6 +26,7 @@ export const Header = () => {
                             <a
                                 onClick={() => {
                                     router.push('/');
+                                    setIsPopUpOpen(false)
                                 }}
                                 className="flex items-center cursor-pointer"
                             >
@@ -36,6 +37,7 @@ export const Header = () => {
                                     count={total.items}
                                     onClick={() => {
                                         router.push('/cart');
+                                        setIsPopUpOpen(false)
                                     }}
                                 />
                                 <button
