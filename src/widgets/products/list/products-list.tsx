@@ -20,7 +20,7 @@ export const ProductsList = () => {
 
     return (
         <>
-            <section className="w-full min-h-[60dvh] max-w-7xl mx-auto">
+            <section className="w-full px-6 md:px-4 lg:px-0 min-h-[60dvh] max-w-7xl mx-auto">
                 <div className="mx-auto max-w-screen-xl-4 sm:px-6 lg:px-8">
                     {product ? (
                         <ProductInfo product={product} />

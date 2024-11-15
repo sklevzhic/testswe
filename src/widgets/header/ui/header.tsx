@@ -5,12 +5,17 @@ import { CartCountHandler } from '@/shared/ui';
 import classNames from 'classnames';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCart } from '@/shared/cart/cart-store';
+import { useOutsideClick } from '@/shared/hooks/use-on-outside-ckick';
 
 export const Header = () => {
     const router = useRouter();
     const [isPopUpOpen, setIsPopUpOpen] = useState(false);
     const { total } = useCart();
     const pathname = usePathname();
+
+    const buttonRef = useOutsideClick<HTMLButtonElement>(() => {
+        setIsPopUpOpen(false);
+    });
 
     return (
         <>
@@ -41,8 +46,13 @@ export const Header = () => {
                                     className="inline-flex ml-4 items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-inherit focus:outline-none focus:ring-2 focus:ring-gray-200"
                                     aria-controls="mobile-menu-2"
                                     aria-expanded="false"
+                                    ref={buttonRef}
                                     onClick={() => {
-                                        setIsPopUpOpen(!isPopUpOpen);
+                                        if (isPopUpOpen) {
+                                            setIsPopUpOpen(false);
+                                        } else {
+                                            setIsPopUpOpen(true);
+                                        }
                                     }}
                                 >
                                     <span className="sr-only">Open main menu</span>
@@ -79,7 +89,7 @@ export const Header = () => {
                                             onClick={() => {
                                                 router.push('/');
                                             }}
-                                            className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
+                                            className={`block cursor-pointer py-2 pr-4 pl-3
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
                                                 ${pathname === '/' ? 'text-orange-600' : 'text-white'}`}
                                         >
@@ -91,7 +101,7 @@ export const Header = () => {
                                             onClick={() => {
                                                 router.push('/shop');
                                             }}
-                                            className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
+                                            className={`block cursor-pointer py-2 pr-4 pl-3 
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
                                                 ${pathname === '/shop' ? 'text-orange-600' : 'text-white'}`}
                                         >
@@ -103,7 +113,7 @@ export const Header = () => {
                                             onClick={() => {
                                                 router.push('/about-us');
                                             }}
-                                            className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
+                                            className={`block cursor-pointer py-2 pr-4 pl-3 
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
                                                 ${pathname === '/about-us' ? 'text-orange-600' : 'text-white'}`}
                                         >
@@ -116,7 +126,7 @@ export const Header = () => {
                                             onClick={() => {
                                                 router.push('/contacts');
                                             }}
-                                            className={`block cursor-pointer py-2 pr-4 pl-3  border-b border-gray-100 
+                                            className={`block cursor-pointer py-2 pr-4 pl-3
                                                 hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
                                                 ${pathname === '/contacts' ? 'text-orange-600' : 'text-white'}`}
                                         >

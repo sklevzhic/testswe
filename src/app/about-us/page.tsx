@@ -8,7 +8,7 @@ export default function AboutUsPage() {
     const router = useRouter();
     return (
         <>
-            <section className="py-24 relative">
+            <section className="py-24 px-4 relative">
                 <div className="w-full max-w-7xl mx-auto">
                     <div className="w-full justify-start items-center gap-12 grid lg:grid-cols-2 grid-cols-1">
                         <div className="w-full justify-center items-start gap-6 grid sm:grid-cols-2 grid-cols-1 lg:order-first order-last">
