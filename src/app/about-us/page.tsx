@@ -8,8 +8,8 @@ export default function AboutUsPage() {
     const router = useRouter();
     return (
         <>
-            <section className="py-24 px-4 relative">
-                <div className="w-full max-w-7xl mx-auto">
+            <div className="rounded-2xl px-4 lg:px-6 w-full max-w-7xl mx-auto  mb-10">
+                <div className="flex flex-col gap-14 md:flex-row items-center lg:gap32">
                     <div className="w-full justify-start items-center gap-12 grid lg:grid-cols-2 grid-cols-1">
                         <div className="w-full justify-center items-start gap-6 grid sm:grid-cols-2 grid-cols-1 lg:order-first order-last">
                             <div className="pt-24 lg:justify-center sm:justify-end justify-start items-start gap-2.5 flex">
@@ -60,7 +60,7 @@ export default function AboutUsPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </>
     );
 }

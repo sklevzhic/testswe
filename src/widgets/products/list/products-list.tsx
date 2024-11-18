@@ -1,6 +1,5 @@
 'use client';
 
-import { products } from '@/shared/consts/products';
 import { Button } from '@/shared/ui';
 import React, { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -9,7 +8,12 @@ import { ProductCardMini } from '@/shared/ui/product-card-mini';
 import { useCart } from '@/shared/cart/cart-store';
 import { Product } from '@/shared/types/chats';
 
-export const ProductsList = () => {
+interface ProductsListProps {
+    products: Product[];
+}
+
+export const ProductsList = (props: ProductsListProps) => {
+    const { products } = props;
     const router = useRouter();
     const params = useSearchParams();
     const product_id = params.get('id');
@@ -20,8 +24,8 @@ export const ProductsList = () => {
 
     return (
         <>
-            <section className="w-full px-6 md:px-4 lg:px-0 min-h-[60dvh] max-w-7xl mx-auto">
-                <div className="mx-auto max-w-screen-xl-4 sm:px-6 lg:px-8">
+            <section className="w-full lg:px-0 min-h-[60dvh] max-w-7xl mx-auto">
+                <div className="mx-auto max-w-screen-xl-4 ">
                     {product ? (
                         <ProductInfo product={product} />
                     ) : (

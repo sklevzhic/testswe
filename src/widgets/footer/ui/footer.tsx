@@ -34,6 +34,16 @@ export const Footer = () => {
                                 <a
                                     className="cursor-pointer text-gray-300 hover:text-orange-500 text-sm"
                                     onClick={() => {
+                                        router.push('/company-details');
+                                    }}
+                                >
+                                    Company
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    className="cursor-pointer text-gray-300 hover:text-orange-500 text-sm"
+                                    onClick={() => {
                                         router.push('/shop');
                                     }}
                                 >
