@@ -34,7 +34,7 @@ export default function ContactsPage() {
                         </div>
                         <form className={'bg-inherit'} onSubmit={handleSubmit(onSubmit)}>
                             <input
-                                className="shadow mb-4 text-gray-800 bg-gray-200 appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                                className="shadow mb-4 text-gray-800 bg-gray-200 appearance-none border border-secondary rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                                 type="text"
                                 placeholder="Name"
                                 {...register('name', { required: true })}
@@ -42,7 +42,7 @@ export default function ContactsPage() {
                             {errors.name && <span className="text-red-500">This field is required</span>}
 
                             <input
-                                className="shadow mb-4 text-gray-800 bg-gray-200 appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                                className="shadow mb-4 text-gray-800 bg-gray-200 appearance-none border border-secondary rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                                 type="email"
                                 placeholder="Email"
                                 {...register('email', { required: true })}
@@ -50,7 +50,7 @@ export default function ContactsPage() {
                             {errors.email && <span className="text-red-500">This field is required</span>}
 
                             <input
-                                className="shadow mb-4 text-gray-800 bg-gray-200 appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                                className="shadow mb-4 text-gray-800 bg-gray-200 appearance-none border border-secondary rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                                 type="text"
                                 placeholder="Subject"
                                 {...register('_subject', { required: true })}
@@ -58,7 +58,7 @@ export default function ContactsPage() {
                             {errors._subject && <span className="text-red-500">This field is required</span>}
 
                             <textarea
-                                className="shadow mb-4 min-h-0 text-gray-800 bg-gray-200 appearance-none border rounded h-64 w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                                className="shadow mb-4 min-h-0 text-gray-800 bg-gray-200 appearance-none border border-secondary rounded h-64 w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                                 placeholder="Type your message here..."
                                 {...register('message', { required: true })}
                                 style={{ height: 121 }}

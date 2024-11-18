@@ -15,9 +15,9 @@ export const CartCountHandler = (props: CartCountHandlerProps) => {
             <div className={'relative bg-inherit'}>
                 <Icon
                     name={'ShoppingCart'}
-                    className={`p-1 rounded-full cursor-pointer hover:bg-primary ${isAddedToCart ? 'bg-primary' : 'bg-inherit'}`}
+                    className={`p-1 rounded-full cursor-pointer hover:border hover:border-primary ${isAddedToCart ? 'bg-primary' : 'bg-inherit'}`}
                     size={size}
-                    color={'white'}
+                    color={!isAddedToCart ? 'hsl(21, 95%, 52%)' : 'white'}
                     onClick={(event) => {
                         event?.stopPropagation();
                         onClick?.();
