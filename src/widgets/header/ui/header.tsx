@@ -17,9 +17,28 @@ export const Header = () => {
         setIsPopUpOpen(false);
     });
 
+    const menu = [
+        {
+            title: 'Home',
+            pathname: '/',
+        },
+        {
+            title: 'Shop',
+            pathname: '/shop',
+        },
+        {
+            title: 'About us',
+            pathname: '/about-us',
+        },
+        {
+            title: 'Contacts',
+            pathname: '/contacts',
+        },
+    ];
+
     return (
         <>
-            <div className={'fixed w-full z-10 bg-[#202026]'}>
+            <div className={'fixed w-full z-10 bg-background'}>
                 <header className={'w-full max-w-7xl mx-auto'} ref={menuMobileRef}>
                     <nav className="py-5 px-4 lg:px-6">
                         <div className="flex flex-wrap justify-between items-center">
@@ -80,59 +99,22 @@ export const Header = () => {
                                 ref={menuMobileRef}
                             >
                                 <ul className="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
-                                    <li>
-                                        <a
-                                            onClick={() => {
-                                                router.push('/');
-                                                setIsPopUpOpen(false);
-                                            }}
-                                            className={`block cursor-pointer py-2 pr-4 pl-3
-                                                hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
-                                                ${pathname === '/' ? 'text-orange-600' : 'text-white'}`}
-                                        >
-                                            Home
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            onClick={() => {
-                                                router.push('/shop');
-                                                setIsPopUpOpen(false);
-                                            }}
-                                            className={`block cursor-pointer py-2 pr-4 pl-3 
-                                                hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
-                                                ${pathname === '/shop' ? 'text-orange-600' : 'text-white'}`}
-                                        >
-                                            Shop
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            onClick={() => {
-                                                router.push('/about-us');
-                                                setIsPopUpOpen(false);
-                                            }}
-                                            className={`block cursor-pointer py-2 pr-4 pl-3 
-                                                hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
-                                                ${pathname === '/about-us' ? 'text-orange-600' : 'text-white'}`}
-                                        >
-                                            About us
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a
-                                            onClick={() => {
-                                                router.push('/contacts');
-                                                setIsPopUpOpen(false);
-                                            }}
-                                            className={`block cursor-pointer py-2 pr-4 pl-3
-                                                hover:bg-orange-400 md:hover:bg-inherit  md:border-0 md:hover:text-primary-700 md:p-0
-                                                ${pathname === '/contacts' ? 'text-orange-600' : 'text-white'}`}
-                                        >
-                                            Contacts
-                                        </a>
-                                    </li>
+                                    {menu.map((menuItem, index) => {
+                                        return (
+                                            <li key={index}>
+                                                <a
+                                                    onClick={() => {
+                                                        router.push(menuItem.pathname);
+                                                        setIsPopUpOpen(false);
+                                                    }}
+                                                    className={`block cursor-pointer py-2 pr-4 pl-3 hover:bg-primaryHover md:hover:bg-inherit  md:border-0 md:hover:text-primary md:p-0
+                                                ${pathname === menuItem.pathname ? 'text-primary' : 'text-primary-foreground'}`}
+                                                >
+                                                    {menuItem.title}
+                                                </a>
+                                            </li>
+                                        );
+                                    })}
                                 </ul>
                             </div>
                         </div>

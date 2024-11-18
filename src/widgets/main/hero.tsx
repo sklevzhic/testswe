@@ -12,14 +12,14 @@ export const Hero = () => {
             <div className="rounded-2xl px-4 lg:px-6 w-full max-w-7xl mx-auto  mb-10">
                 <div className="flex flex-col gap-14 md:flex-row items-center lg:gap32">
                     <div className="w-full ">
-                        <div className="flex items-center text-sm font-medium text-white justify-center lg:justify-start">
-                            <span className="bg-orange-600 py-1 px-3 rounded-2xl text-xs font-medium text-white mr-3 ">#1</span>
+                        <div className="flex items-center text-sm font-medium text-primary-foreground justify-center lg:justify-start">
+                            <span className="bg-primary py-1 px-3 rounded-2xl text-xs font-medium text-primary-foreground mr-3 ">#1</span>
                             Counter-Strike
                         </div>
-                        <h1 className="py-8 text-center text-white font-bold font-manrope text-2xl  md:text-3xl lg:text-4xl lg:text-left leading-[35px]">
-                            Master the Battlefield with<span className="text-orange-600"> Counter-Strike </span>Arsenal
+                        <h1 className="py-8 text-center text-primary-foreground font-bold font-manrope text-2xl  md:text-3xl lg:text-4xl lg:text-left leading-[35px]">
+                            Master the Battlefield with<span className="text-primary"> Counter-Strike </span>Arsenal
                         </h1>
-                        <p className=" text-gray-500 text-md  text-center lg:text-left">
+                        <p className=" text-secondary text-md  text-center lg:text-left">
                             Enhance your gaming skills with a wide range of Counter-Strike weapons and gear. Outsmart your opponents and claim victory. Shop now
                             to upgrade your arsenal.
                         </p>

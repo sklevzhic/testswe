@@ -11,16 +11,16 @@ export const AboutUsMain = () => {
             <>
                 <section className="">
                     <div className="gap-16 items-center py-8 mx-auto max-w-screen-xl flex flex-col md:flex-row justify-between lg:py-16 px-4 lg:px-6">
-                        <div className="order-1 md:order-2 basis-1/2 font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                            <h2 className="text-orange-600 mb-4 text-3xl font-bold font-manrope leading-normal lg:text-start text-center">
+                        <div className="order-1 md:order-2 basis-1/2 font-light text-secondary sm:text-lg dark:text-gray-400">
+                            <h2 className="text-primary mb-4 text-3xl font-bold font-manrope leading-normal lg:text-start text-center">
                                 Level up your gaming experience
                             </h2>
-                            <p className="mb-4 text-gray-400">
+                            <p className="mb-4 ">
                                 Welcome to CSSKINS, your ultimate destination for weapons and items for the popular game Counter-Strike. As avid gamers
                                 ourselves, we understand the importance of having the right tools at your disposal to conquer the virtual battlefield. We have a
                                 top-notch selection of weapons for severe gamers to dominate opponents. Explore the items and gear up for victory!
                             </p>
-                            <ul className={'max-w-md mb-4 space-y-1 list-disc list-inside text-gray-400'}>
+                            <ul className={'max-w-md mb-4 space-y-1 list-disc list-inside'}>
                                 <li>High-Quality Weapons</li>
                                 <li>Wide Variety of Items</li>
                                 <li>Competitive Pricing</li>

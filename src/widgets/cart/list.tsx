@@ -34,7 +34,7 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
 
     return (
         <>
-            <div key={product.id} className="rounded-lg border border-gray-800 bg-gray-800 p-4 shadow-sm dark:bg-gray-800 md:p-6">
+            <div key={product.id} className="rounded-lg border border-secondary bg-secondary-foreground p-4 shadow-sm md:p-6">
                 <div className="space-y-4 bg-inherit md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                     <a className="shrink-0 bg-inherit md:order-1">
                         <img className="h-24 w-24 bg-inherit" src={'/images/items/' + product.image} alt="imac image" />
@@ -47,7 +47,7 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                             <Button
                                 variant={'primary'}
                                 disabled={quantity <= 1}
-                                className={'bg-orange-400 !p-1 w-6 h-6 hover:bg-orange-500 !rounded-full cursor-pointer'}
+                                className={'bg-primary !p-1 w-6 h-6 hover:bg-orange-500 !rounded-full cursor-pointer'}
                                 onClick={() => {
                                     changeQuantityById(product.id, 'decrease');
                                     setQuantity((prev) => prev - 1);
@@ -69,7 +69,7 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                             />
                             <Button
                                 variant={'primary'}
-                                className={'bg-orange-400 !p-1 w-6 h-6 hover:bg-orange-500 !rounded-full cursor-pointer'}
+                                className={'bg-primary !p-1 w-6 h-6 hover:bg-orange-500 !rounded-full cursor-pointer'}
                                 onClick={() => {
                                     changeQuantityById(product.id, 'increase');
                                     setQuantity((prev) => prev + 1);

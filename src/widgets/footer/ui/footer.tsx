@@ -1,10 +1,31 @@
 'use client';
 
 import React from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 export const Footer = () => {
     const router = useRouter();
+    const pathname = usePathname();
+
+    const menu = [
+        {
+            title: 'Company',
+            pathname: '/company-details',
+        },
+        {
+            title: 'Shop',
+            pathname: '/shop',
+        },
+        {
+            title: 'About us',
+            pathname: '/about-us',
+        },
+        {
+            title: 'Contacts',
+            pathname: '/contacts',
+        },
+    ];
+
     return (
         <>
             <footer className="w-full max-w-7xl mx-auto pt-20 px-4 lg:px-6 font-[sans-serif] tracking-wide">
@@ -28,48 +49,23 @@ export const Footer = () => {
                     </div>
 
                     <div className={'mb-6'}>
-                        <h4 className="text-lg font-semibold mb-6 text-white">Information</h4>
+                        <h4 className="text-lg font-semibold mb-6 text-primary-foreground">Information</h4>
                         <ul className="space-y-4">
-                            <li>
-                                <a
-                                    className="cursor-pointer text-gray-300 hover:text-orange-500 text-sm"
-                                    onClick={() => {
-                                        router.push('/company-details');
-                                    }}
-                                >
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="cursor-pointer text-gray-300 hover:text-orange-500 text-sm"
-                                    onClick={() => {
-                                        router.push('/shop');
-                                    }}
-                                >
-                                    Shop
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="cursor-pointer text-gray-300 hover:text-orange-500 text-sm"
-                                    onClick={() => {
-                                        router.push('/about-us');
-                                    }}
-                                >
-                                    About us
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="cursor-pointer text-gray-300 hover:text-orange-500 text-sm"
-                                    onClick={() => {
-                                        router.push('/contacts');
-                                    }}
-                                >
-                                    Contacts
-                                </a>
-                            </li>
+                            {menu.map((item, index) => {
+                                return (
+                                    <li key={index}>
+                                        <a
+                                            onClick={() => {
+                                                router.push(item.pathname);
+                                            }}
+                                            className={`block cursor-pointer hover:text-primaryHover p-0.5 md:border-0 md:hover:text-primary md:p-0
+                                                ${pathname === item.pathname ? 'text-primary' : 'text-primary-foreground'}`}
+                                        >
+                                            {item.title}
+                                        </a>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
                     <div className="justify-end space-x-10 hidden  md:flex mt-[-12px]">
@@ -78,7 +74,7 @@ export const Footer = () => {
                     </div>
                 </div>
                 <div className={'flex justify-center pb-2 items-center'}>
-                    <p className="text-gray-300 text-sm">© 2024, All rights reserved.</p>
+                    <p className="text-secondary text-sm">© 2024, All rights reserved.</p>
                 </div>
             </footer>
         </>

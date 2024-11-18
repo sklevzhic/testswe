@@ -26,9 +26,9 @@ export default function ContactsPage() {
         <>
             <div className="py-6 flex flex-col justify-center sm:py-12">
                 <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-700 to-orange-800 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
                     <div className="text-white relative px-4 py-10 bg-orange-400 shadow-lg sm:rounded-3xl sm:p-20">
-                        <div className="text-center bg-orange-400 pb-6">
+                        <div className="text-center pb-6">
                             <h1 className="bg-inherit text-3xl">Contact Us!</h1>
                             <p className="bg-inherit text-gray-300">Fill up the form below to send us a message.</p>
                         </div>
@@ -67,9 +67,7 @@ export default function ContactsPage() {
                             {errors.message && <span className="text-red-500">This field is required</span>}
 
                             <div className="flex bg-inherit justify-center">
-                                <Button variant={'primary'} type="submit">
-                                    Send
-                                </Button>
+                                <Button type="submit">Send</Button>
                             </div>
                         </form>
                     </div>

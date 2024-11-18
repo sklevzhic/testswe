@@ -24,7 +24,7 @@ export const ProductsList = (props: ProductsListProps) => {
 
     return (
         <>
-            <section className="w-full lg:px-0 min-h-[60dvh] max-w-7xl mx-auto">
+            <section className="w-full lg:px-0 max-w-7xl mx-auto">
                 <div className="mx-auto max-w-screen-xl-4 ">
                     {product ? (
                         <ProductInfo product={product} />
@@ -91,7 +91,7 @@ export const ProductInfo = (props: ProductInfoProps) => {
                         router.push('/shop');
                     }}
                     color={'#f97316'}
-                    className={'border p-2 cursor-pointer border-gray-600 rounded-full'}
+                    className={'border p-2 cursor-pointer border-secondary rounded-full'}
                     size={40}
                     name={'ArrowLeft'}
                 />
@@ -107,11 +107,11 @@ export const ProductInfo = (props: ProductInfoProps) => {
             </div>
             <div className="data w-full lg:pr-8 pr-0 xl:justify-start justify-center flex items-center max-lg:pb-10 xl:my-2 lg:my-5 my-0">
                 <div className="data w-full max-w-xl">
-                    <h2 className="font-manrope font-bold text-white text-3xl leading-10 mb-2 capitalize">{product.title}</h2>
+                    <h2 className="font-manrope font-bold text-primary-foreground text-3xl leading-10 mb-2 capitalize">{product.title}</h2>
                     <div className="flex flex-col sm:flex-row sm:items-center mb-6">
-                        <h6 className="font-manrope font-semibold text-2xl leading-9 text-orange-600 pr-5 mr-5">${product.price}</h6>
+                        <h6 className="font-manrope font-semibold text-2xl leading-9 text-primary pr-5 mr-5">${product.price}</h6>
                     </div>
-                    <p className="text-gray-500 text-base font-normal mb-5">{product.description}</p>
+                    <p className="text-secondary text-base font-normal mb-5">{product.description}</p>
                     <div className="grid grid-cols-1  gap-3 py-8">
                         {productInCart ? (
                             <>
