@@ -13,12 +13,12 @@ export default function ContactsPage() {
         <>
             <section className="antialiased  min-h-[60dvh] relative mx-auto max-w-7xl  px-4 lg:px-6">
                 <div>
-                    <h2 className="flex text-xl font-semibold text-white dark:text-white sm:text-2xl">
+                    <h2 className="flex text-xl font-semibold text-primary sm:text-2xl">
                         <Icon
                             onClick={() => {
                                 router.back();
                             }}
-                            color={'#f97316'}
+                            color={'hsl(var(--primary))'}
                             className={'border p-2 cursor-pointer border-gray-600 rounded-full mr-3'}
                             size={35}
                             name={'ArrowLeft'}

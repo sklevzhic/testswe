@@ -17,7 +17,7 @@ export const CartList = () => {
                             return <CartItem key={product.id} product={product} />;
                         })
                     ) : (
-                        <div className={'flex justify-center py-20 rounded-xl border p-2 text-lg text-white border-slate-400'}>Empty</div>
+                        <div className={'flex justify-center text-primary py-20 rounded-xl border p-2 text-lg border-slate-400'}>Empty</div>
                     )}
                 </div>
             </div>
@@ -34,7 +34,7 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
 
     return (
         <>
-            <div key={product.id} className="rounded-lg border border-secondary bg-secondary-foreground p-4 shadow-sm md:p-6">
+            <div key={product.id} className="rounded-lg bg-secondary-foreground p-4 shadow-sm md:p-6">
                 <div className="space-y-4 bg-inherit md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                     <a className="shrink-0 bg-inherit md:order-1">
                         <img className="h-24 w-24 bg-inherit" src={'/images/items/' + product.image} alt="imac image" />
@@ -53,13 +53,13 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                                     setQuantity((prev) => prev - 1);
                                 }}
                             >
-                                <Icon name={'Minus'} className={''} />
+                                <Icon name={'Minus'} color={'white'} className={''} />
                             </Button>
                             <input
                                 type="text"
                                 id="counter-input-2"
                                 data-input-counter=""
-                                className="w-10 rounded-full border shrink-0 ml-1 mr-1 bg-transparent text-center text-sm font-medium text-white focus:outline-none focus:ring-0"
+                                className="w-10 rounded-full border shrink-0 ml-1 mr-1 bg-transparent text-center text-sm font-medium text-secondary focus:outline-none focus:ring-0"
                                 placeholder=""
                                 disabled={true}
                                 required={true}
@@ -75,15 +75,15 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                                     setQuantity((prev) => prev + 1);
                                 }}
                             >
-                                <Icon name={'Plus'} className={''} />
+                                <Icon name={'Plus'} color={'white'} className={''} />
                             </Button>
                         </div>
                         <div className="text-end bg-inherit md:order-4 md:w-32">
-                            <p className="text-base bg-inherit font-bold text-white dark:text-white">
+                            <p className="text-base bg-inherit font-bold text-secondary">
                                 <span className={'text-gray-400 mr-1'}>1: </span> ${product.price}
                             </p>
                             {quantity > 1 && (
-                                <p className="text-base bg-inherit font-bold text-white dark:text-white">
+                                <p className="text-base bg-inherit font-bold text-secondary">
                                     <span className={'text-gray-400 mr-1'}>{quantity}: </span>${Number(Number(product.price) * quantity).toFixed(2)}
                                 </p>
                             )}
@@ -94,7 +94,7 @@ export const CartItem = (props: { product: ProductWithQuantity }) => {
                             onClick={() => {
                                 router.push(`/shop?id=${product.id}`);
                             }}
-                            className="text-base cursor-pointer bg-inherit font-medium text-white hover:underline dark:text-white"
+                            className="text-base cursor-pointer bg-inherit font-medium text-secondary"
                         >
                             {product.title}
                         </p>

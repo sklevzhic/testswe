@@ -37,10 +37,14 @@ const config: Config = {
                     DEFAULT: 'hsl(var(--primary))',
                     foreground: 'hsl(var(--primary-foreground))',
                 },
+                primaryHover: 'hsl(var(--primary-hover))',
                 secondary: {
                     DEFAULT: 'hsl(var(--secondary))',
                     foreground: 'hsl(var(--secondary-foreground))',
                 },
+                bgFormColor: 'hsl(var(--bg-form-color))',
+                bgFormColorFrom: 'hsl(var(--bg-form-color-from))',
+                bgFormColorTo: 'hsl(var(--bg-form-color-to))',
                 destructive: {
                     DEFAULT: 'hsl(var(--destructive))',
                     foreground: 'hsl(var(--destructive-foreground))',

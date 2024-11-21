@@ -66,7 +66,7 @@ export const Footer = () => {
                     </div>
                     <div className="justify-end space-x-10 hidden  md:flex mt-[-12px]">
                         <img className={'w-20 h-8'} src="/images/payments/visa.png" alt="" />
-                        <img className={'w-20 h-10 mt-[-8px]'} src="/images/payments/mc.png" alt="" />
+                        <img className={'w-20 h-10 mt-[-2px]'} src="/images/payments/mc.png" alt="" />
                     </div>
                 </div>
                 <div className={'flex justify-center pb-2 items-center'}>

@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Icon from '@/shared/ui/icon';
 import { ProductCardMini } from '@/shared/ui/product-card-mini';
 import { useCart } from '@/shared/cart/cart-store';
-import { Product } from '@/shared/types/chats';
+import { Product } from '@/shared/types/product';
 
 interface ProductsListProps {
     products: Product[];
@@ -90,8 +90,8 @@ export const ProductInfo = (props: ProductInfoProps) => {
                     onClick={() => {
                         router.push('/shop');
                     }}
-                    color={'#f97316'}
-                    className={'border p-2 cursor-pointer border-secondary rounded-full'}
+                    color={'hsl(var(--primary))'}
+                    className={'border border-gray-600 p-2 cursor-pointer rounded-full'}
                     size={40}
                     name={'ArrowLeft'}
                 />
@@ -125,13 +125,13 @@ export const ProductInfo = (props: ProductInfoProps) => {
                                             setQuantity((prev) => prev - 1 || 1);
                                         }}
                                     >
-                                        <Icon name={'Minus'} className={''} />
+                                        <Icon name={'Minus'} color={'white'} className={''} />
                                     </Button>
                                     <input
                                         type="text"
                                         id="counter-input-2"
                                         data-input-counter=""
-                                        className="w-10 rounded-full border shrink-0 ml-1 mr-1 bg-transparent text-center text-sm font-medium text-white focus:outline-none focus:ring-0"
+                                        className="w-10 rounded-full border shrink-0 ml-1 mr-1 bg-transparent text-center text-sm font-medium text-secondary focus:outline-none focus:ring-0"
                                         placeholder=""
                                         disabled={true}
                                         required={true}
@@ -147,7 +147,7 @@ export const ProductInfo = (props: ProductInfoProps) => {
                                             setQuantity((prev) => prev + 1);
                                         }}
                                     >
-                                        <Icon name={'Plus'} className={''} />
+                                        <Icon name={'Plus'} color={'white'} className={''} />
                                     </Button>
                                 </div>
                             </>
