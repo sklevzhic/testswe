@@ -31,7 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </Head>
             <body>
                 <ToastProvider>
-                    <ThemeProvider forcedTheme={'system'}>
+                    <ThemeProvider forcedTheme={'blue'}>
                         <Header />
                         <main className="pt-24 w-full mx-auto">{children}</main>
                         <Footer />
